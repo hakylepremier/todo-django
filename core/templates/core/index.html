@@ -1,0 +1,51 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <main class="main-info container">
+    <aside class="categories">
+      {% for category in categories %}
+      <div class="category">
+        <div class="cat-colour"></div>
+        <span class="cat-text">{{ category.name }}</span>
+      </div>
+      {% endfor %}
+    </aside>
+    <section class="todo-items">
+      {% for todo in todos %}
+      {% comment %} {{ my_val = 'yes' if todo.isChecked else 'No' }} {% endcomment %}
+        <article class="todo-item {{ todo.isChecked|yesno:'todo-done-checked,,maybe' }}">
+          <header class="todo-head">
+            <h2 class="todo-title">{{ todo.name }}</h2>
+            <div class="todo-dialog-container">
+              <img src="{% static 'asset/icons/more-icon.svg' %}" alt="" class="todo-more-btn">
+              <div class="todo-more-menu">
+                <a href="{% url 'edit' todo.id %}" class="todo-menu-edit">Edit...</a>
+                <a href="{% url 'delete' todo.id %}" class="todo-menu-delete">Delete</a>
+              </div>
+            </div>
+            
+          </header>
+          <p class="todo-text">
+            {{ todo.description }}
+          </p>
+          <div class="todo-done">
+            <span>{{ todo.category }}</span>
+            <div class="todo-done-container">
+              <a href="{% url 'toggleDone' todo.id %}" class="todo-done-link">
+                <div class="todo-done-checkbox">
+                  <svg class="todo-done-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960"><path fill="currentColor" d="M378 807.609q-7.696 0-14.674-2.848t-13.109-8.978l-181-181Q157.391 602.957 157.391 586t11.826-28.783q11.826-11.826 28.066-11.826 16.239 0 28.63 11.826L378 709.304l355.652-355.087q11.826-11.826 28.283-12.109 16.456-.282 28.283 12.109 11.826 11.826 11.826 28.566 0 16.739-11.826 28.565L405.783 795.783q-6.131 6.13-13.109 8.978T378 807.609Z"/></svg>
+                </div>
+                <p class="todo-done-text">Done</p>
+              </a>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </section>
+  </main>
+
+  {% block myform %}{% endblock %}
+
+{% endblock %}

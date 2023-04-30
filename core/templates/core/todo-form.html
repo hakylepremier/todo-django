@@ -1,0 +1,41 @@
+<section class="todo-form-container">
+  <form action="POST" class="todo-form">
+    <header class="todo-form-action-btns">
+      <a href="" class="todo-cancel-btn">Cancel</a>
+      <input type="submit" class="todo-submit-btn" value="Add">
+    </header>
+
+    <div class="todo-input-container">
+      <label for="todo-form-title" class="todo-label">Title</label>
+      <input type="text" class="todo-input todo-input-title" name="todo-form-title" id="todo-form-title" placeholder="Add a title">
+    </div>
+
+    <div class="todo-input-container">
+      <label for="todo-form-desc" class="todo-label">Description</label>
+      <textarea rows="4" class="todo-input todo-input-descr" name="todo-form-desc" id="todo-form-desc" placeholder="Add a description"></textarea>
+      <!-- <input type="text" class="todo-input todo-input-descr" name="todo-form-desc" id="todo-form-desc" placeholder="Add a description"> -->
+    </div>
+
+    <div>
+      <p class="todo-label">Categories</p>
+      <div class="todo-form-categories">
+        <div class="todo-form-category">
+          <input type="radio" name="descr" value="work" id="work">
+          <label for="work" class="todo-category-label">Work</label>
+        </div>
+        <div class="todo-form-category">
+          <input type="radio" name="descr" value="study" id="study">
+          <label for="study" class="todo-category-label">Study</label>
+        </div>
+        <div class="todo-form-category">
+          <input type="radio" name="descr" value="entertainment" id="entertainment">
+          <label for="entertainment" class="todo-category-label">Entertainment</label>
+        </div>
+        <div class="todo-form-category">
+          <input type="radio" name="descr" value="family" id="family">
+          <label for="family" class="todo-category-label">Family</label>
+        </div>
+      </div>
+    </div>
+  </form>
+ </section> 

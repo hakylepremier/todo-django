@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>todo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+  </head>
+  <body>
+    <header class="head container">
+      <h1 class="todo-logo">todo</h1>
+      <a href="#" class="todo-add">
+        <div class="todo-add-vert todo-add-base"></div>
+        <div class="todo-add-hor todo-add-base"></div>
+      </a>
+    </header>
+    <main class="main-info container">
+      <aside class="categories">
+        <div class="category">
+          <div class="cat-colour"></div>
+          <span class="cat-text">work</span>
+        </div>
+        <div class="category">
+          <div class="cat-colour"></div>
+          <span class="cat-text">study</span>
+        </div>
+        <div class="category">
+          <div class="cat-colour"></div>
+          <span class="cat-text">entertainment</span>
+        </div>
+        <div class="category">
+          <div class="cat-colour"></div>
+          <span class="cat-text">family</span>
+        </div>
+      </aside>
+      <section class="todo-items">
+        <article class="todo-item">
+          <header class="todo-head">
+            <h2 class="todo-title">My first title</h2>
+            <div class="todo-dialog-container">
+              <img src="asset/icons/more-icon.svg" alt="" class="todo-more-btn">
+              <div class="todo-more-menu">
+                <a href="" class="todo-menu-edit">Edit...</a>
+                <a href="" class="todo-menu-delete">Delete</a>
+              </div>
+            </div>
+            
+          </header>
+          <p class="todo-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, consequatur. Iusto eveniet quia fugiat accusamus facilis aperiam ducimus, labore cum beatae totam quos soluta, sed quas eius voluptate exercitationem a!
+          </p>
+          <div class="todo-done">
+            <div class="todo-done-container">
+              <a href="#" class="todo-done-link">
+                <div class="todo-done-checkbox">
+                  <svg class="todo-done-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960"><path fill="currentColor" d="M378 807.609q-7.696 0-14.674-2.848t-13.109-8.978l-181-181Q157.391 602.957 157.391 586t11.826-28.783q11.826-11.826 28.066-11.826 16.239 0 28.63 11.826L378 709.304l355.652-355.087q11.826-11.826 28.283-12.109 16.456-.282 28.283 12.109 11.826 11.826 11.826 28.566 0 16.739-11.826 28.565L405.783 795.783q-6.131 6.13-13.109 8.978T378 807.609Z"/></svg>
+                </div>
+                <p class="todo-done-text">Done</p>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <article class="todo-item">
+          <header class="todo-head">
+            <h2 class="todo-title">My second title</h2>
+            <div class="todo-dialog-container">
+              <img src="asset/icons/more-icon.svg" alt="" class="todo-more-btn">
+              <div class="todo-more-menu">
+                <a href="" class="todo-menu-edit">Edit...</a>
+                <a href="" class="todo-menu-delete">Delete</a>
+              </div>
+            </div>
+          </header>
+          <p class="todo-text">
+            Error alias dolore sequi nemo, voluptatum quas ipsum sapiente, voluptatibus labore magnam rerum placeat fuga dolorum velit cumque amet illo? Blanditiis inventore labore ab necessitatibus quis deserunt odio debitis nisi.
+          </p>
+          <div class="todo-done">
+            <div class="todo-done-container">
+              <a href="#" class="todo-done-link">
+                <div class="todo-done-checkbox">
+                  <svg class="todo-done-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960"><path fill="currentColor" d="M378 807.609q-7.696 0-14.674-2.848t-13.109-8.978l-181-181Q157.391 602.957 157.391 586t11.826-28.783q11.826-11.826 28.066-11.826 16.239 0 28.63 11.826L378 709.304l355.652-355.087q11.826-11.826 28.283-12.109 16.456-.282 28.283 12.109 11.826 11.826 11.826 28.566 0 16.739-11.826 28.565L405.783 795.783q-6.131 6.13-13.109 8.978T378 807.609Z"/></svg>
+                </div>
+                <p class="todo-done-text">Done</p>
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+   <section class="todo-form-container">
+    <form action="POST" class="todo-form">
+      <header class="todo-form-action-btns">
+        <a href="" class="todo-cancel-btn">Cancel</a>
+        <input type="submit" class="todo-submit-btn" value="Add">
+      </header>
+
+      <div class="todo-input-container">
+        <label for="todo-form-title" class="todo-label">Title</label>
+        <input type="text" class="todo-input todo-input-title" name="todo-form-title" id="todo-form-title" placeholder="Add a title">
+      </div>
+
+      <div class="todo-input-container">
+        <label for="todo-form-desc" class="todo-label">Description</label>
+        <textarea rows="4" class="todo-input todo-input-descr" name="todo-form-desc" id="todo-form-desc" placeholder="Add a description"></textarea>
+        <!-- <input type="text" class="todo-input todo-input-descr" name="todo-form-desc" id="todo-form-desc" placeholder="Add a description"> -->
+      </div>
+
+      <div>
+        <p class="todo-label">Categories</p>
+        <div class="todo-form-categories">
+          <div class="todo-form-category">
+            <input type="radio" name="descr" value="work" id="work">
+            <label for="work" class="todo-category-label">Work</label>
+          </div>
+          <div class="todo-form-category">
+            <input type="radio" name="descr" value="study" id="study">
+            <label for="study" class="todo-category-label">Study</label>
+          </div>
+          <div class="todo-form-category">
+            <input type="radio" name="descr" value="entertainment" id="entertainment">
+            <label for="entertainment" class="todo-category-label">Entertainment</label>
+          </div>
+          <div class="todo-form-category">
+            <input type="radio" name="descr" value="family" id="family">
+            <label for="family" class="todo-category-label">Family</label>
+          </div>
+        </div>
+      </div>
+    </form>
+   </section> 
+
+   <footer>
+     Copyright <script>new Date().getFullYear()</script>
+  <script src="js/main.js"></script>
+   </footer>
+  </body>
+</html>

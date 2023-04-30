@@ -1,0 +1,63 @@
+{% extends 'core/index.html' %}
+{% comment %} {% load static %} {% endcomment %}
+
+{% block myform %}
+
+  <section class="todo-form-container">
+    <form method="POST" class="todo-form" action="." enctype="multipart/form-data">
+      {% csrf_token %}
+      <header class="todo-form-action-btns">
+        <a href="{% url 'index' %}" class="todo-cancel-btn">Cancel</a>
+        <input type="submit" class="todo-submit-btn" value="Add">
+      </header>
+  
+      <div class="todo-input-container">
+        <label for="{{ form.name.id_for_label }}" class="todo-label">Title</label>
+        {{ form.name }}
+      </div>
+  
+      <div class="todo-input-container">
+        <label for="{{ form.description.id_for_label }}" class="todo-label">Description</label>
+        {{ form.description }}
+      </div>
+      {% comment %} {{ form.as_p }} {% endcomment %}
+      
+      {% comment %} {% for category in form.categories %}
+        <p>{{category.name}} {{category.id}}</p>
+      {% endfor %} {% endcomment %}
+      <div>
+        <p class="todo-label">Categories</p>
+        {{ form.category }}
+      </div>
+      {% if form.errors or form.non_field_errors %}
+        <div class="mb-3 p-6 bg-red-100 rounded-xl">
+            {% for field in form %}
+                {{ field.errors }}
+            {% endfor %}
+
+            {{ form.non_field_errors }}
+        </div>
+    {% endif %}
+
+    </form>
+  </section> 
+
+{% endblock %}
+
+
+{% comment %} {{ form.non_field_errors }}
+<div class="fieldWrapper">
+    {{ form.subject.errors }}
+    <label for="{{ form.subject.id_for_label }}">Email subject:</label>
+    {{ form.subject }}
+</div>
+<div class="fieldWrapper">
+    {{ form.message.errors }}
+    <label for="{{ form.message.id_for_label }}">Your message:</label>
+    {{ form.message }}
+</div>
+<div class="fieldWrapper">
+    {{ form.sender.errors }}
+    <label for="{{ form.sender.id_for_label }}">Your email address:</label>
+    {{ form.sender }}
+</div> {% endcomment %}
